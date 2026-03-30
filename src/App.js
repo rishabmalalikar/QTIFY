@@ -19,12 +19,18 @@ function App() {
       <Hero />
 
       <Grid container spacing={1} sx={{display: 'flex', justifyContent:'space-between'}} px={2}>
-      <Section AlbumCat={"Top Albums"}/>
+      <Section Albdata={{
+        AlbumCat: 'Top Albums',
+        url: 'https://qtify-backend.labs.crio.do/albums/top'
+      }}/>
         
       </Grid>
 <hr color='#34c94b;'/>
       <Grid container spacing={1} sx={{display: 'flex', justifyContent:'space-between'}} px={2}>
-      <Section AlbumCat={"New Albums"}/>
+      <Section Albdata={{
+        AlbumCat: 'New Albums',
+        url: 'https://qtify-backend.labs.crio.do/albums/new'
+      }}/>
       {/* <NewAlbum newAlbum={"New Albums"}/> */}
       </Grid>
     </Box>

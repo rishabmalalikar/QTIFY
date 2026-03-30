@@ -4,13 +4,13 @@ import { useState, useEffect } from 'react';
 import { Typography ,Box,Grid,Button} from '@mui/material';
 
 
-export default function Section(AlbumCat){
+export default function Section({Albdata}){
     const [data, setData] = useState([]);
-
+    // console.log(Albdata.AlbumCat, Albdata.url)
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('https://qtify-backend.labs.crio.do/albums/top');
+        const response = await axios.get(`${Albdata.url}`);
         const ApiData = response.data;
         setData(ApiData);
         // console.log();
@@ -28,7 +28,7 @@ export default function Section(AlbumCat){
 
       <>
           <Typography variant="h6" sx={{ color: '#fff', padding: '5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold'}}>
-            {AlbumCat.AlbumCat}
+            {Albdata.AlbumCat}
           </Typography>  
           <Button variant="text">See All</Button>
         <Grid container spacing={1}>
