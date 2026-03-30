@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Typography ,Box,Grid,Button} from '@mui/material';
 
 
-export default function NewAlbum(newAlbum){
+export default function Section(AlbumCat){
     const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ export default function NewAlbum(newAlbum){
     
 
       <>
-          <Typography variant="h6"  sx={{ color: '#fff', padding: '5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold'}}>
-            {newAlbum.newAlbum}
+          <Typography variant="h6" sx={{ color: '#fff', padding: '5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold'}}>
+            {AlbumCat.AlbumCat}
           </Typography>  
           <Button variant="text">See All</Button>
         <Grid container spacing={1}>

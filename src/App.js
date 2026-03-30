@@ -7,8 +7,8 @@ import Cards from './Component/Card/Card';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import { Typography ,Box,Grid,Button} from '@mui/material';
-import NewAlbum from './Component/NewAlbums/NewAlbums';
-import TopAlbum from './Component/TopAlbums/TopAlbums';
+// import NewAlbum from './Component/NewAlbums/NewAlbums';
+import Section from './Component/Section/Section';
 
 function App() {
 
@@ -19,13 +19,13 @@ function App() {
       <Hero />
 
       <Grid container spacing={1} sx={{display: 'flex', justifyContent:'space-between'}} px={2}>
-      <TopAlbum TopAlbum={"Top Albums"}/>
+      <Section AlbumCat={"Top Albums"}/>
         
       </Grid>
-
+<hr color='#34c94b;'/>
       <Grid container spacing={1} sx={{display: 'flex', justifyContent:'space-between'}} px={2}>
-        
-      <NewAlbum newAlbum={"New Albums"}/>
+      <Section AlbumCat={"New Albums"}/>
+      {/* <NewAlbum newAlbum={"New Albums"}/> */}
       </Grid>
     </Box>
   );
