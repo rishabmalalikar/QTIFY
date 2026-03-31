@@ -20,35 +20,53 @@ function App() {
     <Box container className="App">
       <Navbar  />
       <Hero />
-      {Bstate==="Collapse"? (
-      <Grid container spacing={1} sx={{display: 'flex', justifyContent:'space-between'}} px={2}>
-        <Section Albdata={{
-        AlbumCat: 'Top Albums',
-        url: 'https://qtify-backend.labs.crio.do/albums/top'
-        }} Bstate={Bstate} setBstate={setBstate} />
-      </Grid>):(
-        <Carousel Albdata={{
-        AlbumCat: 'Top Albums',
-        url: 'https://qtify-backend.labs.crio.do/albums/top'
-        }} Bstate={Bstate} setBstate={setBstate} />
-      )}
-
+      <div style={{ display: Bstate === "Show All" ? "block" : "none" }}>
+        <Carousel
+          Albdata={{
+      AlbumCat: 'Top Albums',
+      url: 'https://qtify-backend.labs.crio.do/albums/top'
+    }}
+    Bstate={Bstate}
+          setBstate={setBstate}
+        />
+      </div>
+      <div style={{ display: Bstate === "Collapse" ? "block" : "none" }}>
+        <Grid container spacing={1} px={2} sx={{ display: 'flex', justifyContent: 'space-between', alignContent:'center', alignItems: 'flex-start', flexDirection: 'row'}}  pb={1} pt={2}>
+          <Section
+            Albdata={{
+              AlbumCat: 'Top Albums',
+              url: 'https://qtify-backend.labs.crio.do/albums/top'
+            }}
+            Bstate={Bstate}
+            setBstate={setBstate}
+          />
+        </Grid>
+      </div>
 
       <hr color='#34c94b;'/>
 
-      {Bstate2==="Collapse"? (
-      <Grid container spacing={1} sx={{display: 'flex', justifyContent:'space-between'}} px={2}>
-        <Section Albdata={{
-        AlbumCat: 'New Albums',
-        url: 'https://qtify-backend.labs.crio.do/albums/new'
-        }}  Bstate={Bstate2} setBstate={setBstate2} />
-      </Grid>):(
-          <Carousel Albdata={{
+      <div style={{ display: Bstate2 === "Show All" ? "block" : "none" }}>
+        <Carousel
+          Albdata={{
+          AlbumCat: 'New Albums',
+          url: 'https://qtify-backend.labs.crio.do/albums/new'
+          }}
+          Bstate={Bstate2}
+          setBstate={setBstate2}
+        />
+      </div>
+      <div style={{ display: Bstate2 === "Collapse" ? "block" : "none" }}>
+        <Grid container spacing={1} px={2} sx={{ display: 'flex', justifyContent: 'space-between', alignContent:'center', alignItems: 'flex-start', flexDirection: 'row'}}  pb={1} pt={2}>
+          <Section
+            Albdata={{
             AlbumCat: 'New Albums',
             url: 'https://qtify-backend.labs.crio.do/albums/new'
-            }}  Bstate={Bstate2} setBstate={setBstate2}/>
-      )}
-
+            }}
+            Bstate={Bstate2}
+            setBstate={setBstate2}
+          />
+        </Grid>
+      </div>
     </Box>
   );
 }

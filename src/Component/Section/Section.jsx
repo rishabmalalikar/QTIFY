@@ -26,10 +26,12 @@ export default function Section({Albdata, Bstate, setBstate}) {
 
   return ( 
       <>
-        <Typography variant="h6" sx={{ color: '#fff', padding: '5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold'}}>
+      
+        <Typography variant="h6" sx={{ color: '#fff', padding: '5px',  fontWeight: 'bold'}}>
           {Albdata.AlbumCat}
         </Typography>  
         <Button variant="text" onClick={handleButton} sx={{ color: '#34c94b' }}>{Bstate}</Button>
+      
         <Grid container spacing={1}>
           {data.map((item, index) => (
             <Cards key={index} item={item} />
