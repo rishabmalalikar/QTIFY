@@ -1,0 +1,10 @@
+:global(.mySwiper .swiper-button-next),
+:global(.mySwiper .swiper-button-prev) {
+  background-color: #34c94b;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  padding: 0.5%;
+}
+
