@@ -28,7 +28,7 @@ export default function Carousel({Albdata, Bstate, setBstate}) {
 
 
     const handleButton = () => {
-    Bstate === "See all" ? setBstate("Collapse") : setBstate("See all");
+    Bstate === "Show All" ? setBstate("Collapse") : setBstate("Show All");
   };
 
 

@@ -12,8 +12,8 @@ import Section from './Component/Section/Section';
 import Carousel from './Component/Carousel/Carousel';
 
 function App() {
-  const [Bstate, setBstate] = useState("See all");
-  const [Bstate2, setBstate2] = useState("See all");
+  const [Bstate, setBstate] = useState("Show All");
+  const [Bstate2, setBstate2] = useState("Show All");
 
 
   return (
