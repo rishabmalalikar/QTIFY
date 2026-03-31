@@ -40,12 +40,16 @@ export default function Carousel({Albdata, Bstate, setBstate}) {
       </Typography>  
       <Button variant="text" onClick={handleButton} sx={{ color: '#34c94b' }}>{Bstate}</Button>
     </Box>
+        {data.length > 0 && (
         <Swiper
+            key={data.length}
             className="mySwiper"
             spaceBetween={2}
             navigation={true}
             modules={[Navigation]}
             loop={true}
+            observer={true}
+            observeParents={true}
             breakpoints={{
                 320: { slidesPerView: 2 },
                 490: { slidesPerView: 3 },
@@ -54,12 +58,14 @@ export default function Carousel({Albdata, Bstate, setBstate}) {
                 1024: { slidesPerView: 6 },  
                 1280: { slidesPerView: 7 },  
             }}
-            // style={{"--swiper-navigation-color": "#ffffffff", "--swiper-navigation-size": "15px", "--swiper-navigation-background": "#34c94b"}}
         >
-        {data.map((item, index) => (
-            <SwiperSlide key={index}><Cards item={item} /></SwiperSlide>
-        ))}
+            {data.map((item, index) => (
+                <SwiperSlide key={index}>
+                    <Cards item={item} />
+                </SwiperSlide>
+            ))}
         </Swiper>
+        )}
     </>
   );
 }
