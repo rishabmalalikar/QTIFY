@@ -11,7 +11,7 @@ import Box from '@mui/material/Box';
 function Navbar({ searchData }) {
   return (
     <nav className={styles.navbar}>
-      <Box mr={2} ml={2} display="flex" alignItems="center" justifyContent="space-between" width="100%">
+      <Box mr={"15px"} ml={"15px"} display="flex" alignItems="center" justifyContent="space-between" width="100%">
         <Link to="/">
           <Logo />
         </Link>

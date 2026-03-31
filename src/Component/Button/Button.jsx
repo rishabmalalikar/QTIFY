@@ -5,7 +5,7 @@ function CustomButton({children}) {
   return (
     <>
 
-      <Button variant="contained" className={styles.button}>
+      <Button  variant="contained" className={styles.button}>
         {children}
       </Button>
     </>
