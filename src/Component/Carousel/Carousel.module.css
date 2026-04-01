@@ -8,3 +8,13 @@
   padding: 0.5%;
 }
 
+:global(.swiper-button-next),
+:global(.swiper-button-prev) {
+  pointer-events: all !important;
+  z-index: 10;
+}
+
+:global(.swiper-button-next svg),
+:global(.swiper-button-prev svg) {
+  pointer-events: all !important;
+}

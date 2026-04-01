@@ -45,10 +45,12 @@ export default function Carousel({Albdata, Bstate, setBstate, tabs}) {
     {tabs ? <Tabs /> : null}
         {data.length > 0 && (
         <Swiper
-            key={data.length}
+            
             className="mySwiper"
             spaceBetween={2}
-            navigation={true}
+            navigation={{
+              clickable: true 
+            }}
             modules={[Navigation]}
             loop={true}
             observer={true}
