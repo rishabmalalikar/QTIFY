@@ -7,8 +7,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import './Carousel.module.css';
 import { Navigation } from 'swiper/modules';
+import Tabs from '../Tabs/Tabs';
 
-export default function Carousel({Albdata, Bstate, setBstate}) {
+export default function Carousel({Albdata, Bstate, setBstate, tabs}) {
 
     const [data, setData] = useState([]);
   useEffect(() => {
@@ -37,9 +38,11 @@ export default function Carousel({Albdata, Bstate, setBstate}) {
     <Box container spacing={1} sx={{display: 'flex', justifyContent:'space-between', flexDirection: 'row'}} px={2} pb={1} pt={2}>
       <Typography variant="h6" sx={{ color: '#fff', padding: '5px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontWeight: 'bold'}}>
           {Albdata.AlbumCat}
-      </Typography>  
-      <Button variant="text" onClick={handleButton} sx={{ color: '#34c94b' }}>{Bstate}</Button>
+      </Typography>
+      {Bstate==='Show All' || Bstate === "Collapse" ? <Button variant="text" onClick={handleButton} sx={{ color: '#34c94b' }}>{Bstate}</Button>:null}
+      
     </Box>
+    {tabs ? <Tabs /> : null}
         {data.length > 0 && (
         <Swiper
             key={data.length}
@@ -59,6 +62,7 @@ export default function Carousel({Albdata, Bstate, setBstate}) {
                 1280: { slidesPerView: 7 },  
             }}
         >
+          
             {data.map((item, index) => (
                 <SwiperSlide key={index}>
                     <Cards item={item} />

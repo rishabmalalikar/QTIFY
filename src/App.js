@@ -11,6 +11,7 @@ import { Typography ,Box,Grid,Button} from '@mui/material';
 import Section from './Component/Section/Section';
 import Carousel from './Component/Carousel/Carousel';
 
+
 function App() {
   const [Bstate, setBstate] = useState("Show All");
   const [Bstate2, setBstate2] = useState("Show All");
@@ -67,6 +68,14 @@ function App() {
           />
         </Grid>
       </div>
+
+      <Carousel
+          Albdata={{
+          AlbumCat: 'Songs',
+          url: 'https://qtify-backend.labs.crio.do/songs'
+          }} tabs={true} />
+
+
     </Box>
   );
 }
